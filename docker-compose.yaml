@@ -1,0 +1,13 @@
+# docker-compose.yaml
+services:
+  c-dev:
+    image: gcc:latest
+    container_name: c_dev_env
+    working_dir: /workspace
+    volumes:
+      - ./fs:/workspace # ホストの ./src をコンテナにマウント
+    stdin_open: true # -i
+    tty: true # -t
+    command: bash
+    environment:
+      - TERM=xterm-256color
