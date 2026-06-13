@@ -12,17 +12,17 @@ typedef enum {
 
 /* カーネルの ovl_entry に相当 */
 typedef struct {
-    char lower_path[256]; /* lower側の実パス */
-    char upper_path[256]; /* upper側の実パス (NULLなら未コピー) */
+    char lower_path[PATH_MAX]; /* lower側の実パス */
+    char upper_path[PATH_MAX]; /* upper側の実パス (NULLなら未コピー) */
     ovl_path_type_t type;
     int  is_whiteout;     /* 削除マーク */
 } ovl_entry_t;
 
 /* カーネルの ovl_fs に相当 (マウント情報) */
 typedef struct {
-    char lower_root[256];
-    char upper_root[256];
-    char work_root[256];
+    char lower_root[PATH_MAX];
+    char upper_root[PATH_MAX];
+    char work_root[PATH_MAX];
 } ovl_fs_t;
 
 typedef struct {

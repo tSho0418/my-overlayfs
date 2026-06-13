@@ -2,7 +2,8 @@
 #include <sys/stat.h>
 #include <string.h>
 #include <stdio.h>
-#include "simple_overlay.h"
+#include "simple_overlay.h"KK:W
+
 
 /* whiteoutの判定: character device で rdev==0 */
 int is_whiteout(const char *path) {
